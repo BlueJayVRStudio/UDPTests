@@ -2,6 +2,40 @@ import os
 import socket
 import time
 
+import struct
+
+class Vector3:
+    def __init__(self, _x, _y, _z):
+        self.x = _x
+        self.y = _y
+        self.z = _z
+    
+
+class Message:
+    def __init__(self, _name, _position):
+        self.name = _name
+        self.position = _position
+
+# value = 25788.567777778888
+# _bytes = struct.pack("d", value)
+# # ba = bytearray(struct.pack("f", value))  
+
+# print(value)
+# toSend = ""
+# for i in _bytes:
+#     toSend += chr(i)
+# print(toSend)
+# print(type(toSend))
+# toSend = toSend.encode()
+
+# byteArray = []
+# for i in toSend.decode():
+#     byteArray.append(ord(i))
+# ba = bytearray(byteArray)
+# print(ba)
+# print(type(struct.unpack("d", ba)[0]))
+# print(struct.unpack("d", ba)[0])
+
 udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 SERVER_ADDR = os.getenv("SERVER_ADDR")
