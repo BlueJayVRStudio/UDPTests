@@ -14,4 +14,6 @@ while True:
 
     message = data.decode()
 
+    udp_socket.sendto("message received, thank you :D", (addr, server_port))
+
     print(f"Received from {addr}: {message}")
