@@ -11,9 +11,10 @@ print(f"Listening on {server_ip}:{server_port}")
 
 while True:
     data, addr = udp_socket.recvfrom(1024)
+    print(addr)
 
     message = data.decode()
 
-    udp_socket.sendto("message received, thank you :D", (addr, server_port))
+    udp_socket.sendto("message received, thank you :D".encode(), (addr[0], server_port))
 
     print(f"Received from {addr}: {message}")
